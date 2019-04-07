@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "homework4": {
+    "lesson7": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/homework4",
+            "outputPath": "dist/lesson7",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,7 +25,8 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "es5BrowserSupport": true
           },
           "configurations": {
             "production": {
@@ -57,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "homework4:build"
+            "browserTarget": "lesson7:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "homework4:build:production"
+              "browserTarget": "lesson7:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "homework4:build"
+            "browserTarget": "lesson7:build"
           }
         },
         "test": {
@@ -102,7 +103,7 @@
         }
       }
     },
-    "homework4-e2e": {
+    "lesson7-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -111,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "homework4:serve"
+            "devServerTarget": "lesson7:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "homework4:serve:production"
+              "devServerTarget": "lesson7:serve:production"
             }
           }
         },
@@ -131,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "homework4"
+  "defaultProject": "lesson7"
 }
