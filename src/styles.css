@@ -6,3 +6,14 @@
   width: 100%;
 }
 
+.w-50 {
+  width: 50%;
+}
+
+.w-35 {
+  width: 35%;
+}
+
+.mx-auto {
+  margin: 0 auto;
+}

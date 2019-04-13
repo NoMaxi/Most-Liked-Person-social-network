@@ -1,0 +1,17 @@
+<div class="login-form-container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+      <button mat-button (click)="resetPasswordModal = true">Reset password</button>
+      <button mat-button routerLink="/auth/signup">Signup</button>
+    </mat-card-header>
+    <mat-card-content>
+      <app-login-form></app-login-form>
+    </mat-card-content>
+  </mat-card>
+
+  <app-reset-password-modal 
+    *ngIf="resetPasswordModal" 
+    (modalClose)="resetPasswordModal = false"
+  ></app-reset-password-modal>
+</div>

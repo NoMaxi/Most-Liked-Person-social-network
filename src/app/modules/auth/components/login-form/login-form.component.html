@@ -1,0 +1,48 @@
+<p-toast [style]="{
+    margin: '1rem',
+    minWidth: '200px',
+    maxWidth: '450px'
+  }">
+</p-toast>
+
+<form
+  [formGroup]="loginForm"
+  (ngSubmit)="onSubmit()"
+>
+  <mat-form-field class="w-100">
+    <input
+      type="email"
+      matInput
+      placeholder="Email"
+      formControlName="email"
+    >
+    <mat-error *ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="loginForm.get('email').hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="w-100">
+    <input
+      type="password"
+      matInput
+      placeholder="Password"
+      formControlName="password"
+    >
+    <mat-error *ngIf="loginForm.get('password').hasError('minlength') && !loginForm.get('password').hasError('required')">
+      Please enter a valid password
+    </mat-error>
+    <mat-error *ngIf="loginForm.get('password').hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <button
+    class="submit-btn"
+    color="primary"
+    mat-raised-button
+    [disabled]="loginForm.invalid"
+  >
+    Login
+  </button>
+</form>
