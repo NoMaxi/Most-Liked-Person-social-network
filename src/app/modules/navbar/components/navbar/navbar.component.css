@@ -13,8 +13,9 @@
 }
 
 .toolbar-notifications-list {
-  min-height: 250px;
-  max-width: 450px;
+  min-height: 150px;
+  width: 420px;
+  max-height: 600px;
 }
 
 .fas.fa-bell {

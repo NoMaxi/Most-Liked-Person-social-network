@@ -4,13 +4,15 @@
     <div class="notifications-menu">
       <i
         class="fa-icon fas fa-bell"
-        (click)="toggleNotificationsVisible()"
+        (click)="op.toggle($event)"
       ></i>
     </div>
   </div>
+  <p-overlayPanel #op [dismissable]="true">
+    <app-notifications-list
+      class="toolbar-notifications-list"
+      [notifications]="notifications"
+    ></app-notifications-list>
+  </p-overlayPanel>
 </mat-toolbar>
-<app-notifications-list
-  *ngIf="areNotificationsVisible"
-  class="toolbar-notifications-list"
-  [notifications]="notifications">
-</app-notifications-list>
+

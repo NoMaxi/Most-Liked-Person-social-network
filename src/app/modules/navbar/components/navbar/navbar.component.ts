@@ -13,7 +13,6 @@ import { Notification } from '../../interfaces/Notification';
 })
 export class NavbarComponent implements OnInit {
   isHidden = true;
-  areNotificationsVisible = false;
   notifications: Notification[];
 
   constructor(
@@ -31,13 +30,9 @@ export class NavbarComponent implements OnInit {
           this.isHidden = !!value.withoutHeader;
         });
       });
-  }
-
-  toggleNotificationsVisible() {
-    this.areNotificationsVisible = !this.areNotificationsVisible;
+    
     this.navbarService.getNotifications().subscribe((data: Notification[]) => {
       this.notifications = data;
-      console.log(data);
     }, (err) => {
       console.log(err);
 

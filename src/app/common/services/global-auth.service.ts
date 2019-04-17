@@ -10,7 +10,7 @@ export class GlobalAuthService {
     return !!localStorage.getItem('sn_app_token');
   }
 
-  get token() {
+  get token(): string {
     return localStorage.getItem('sn_app_token') || '';
   }
 }

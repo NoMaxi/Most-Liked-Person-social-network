@@ -1,4 +1,32 @@
 .toolbar-notification-item {
+  display: flex;
   border-bottom: 1px solid grey;
   padding: 10px;
+}
+
+.notification-user-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.notification-user-img {
+  border-radius: 50%;
+  margin-right: 12px;
+  height: 50px;
+  width: 50px;
+}
+
+.toolbar-notification-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.notification-user-name {
+  font-weight: 700;
+  cursor: pointer;
 }

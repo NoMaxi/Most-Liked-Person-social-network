@@ -1,5 +1,6 @@
-<div class="home-container"
-     [ngStyle]="{ background: 'url(' + data?.homeBackground + ')' + 'center/cover no-repeat' }"
+<div
+  [ngStyle]="{ background: 'url(' + (data?.homeBackground || '') + ') center/cover no-repeat' }"
+  class="home-container"
 >
   <div class="home-inner-container mx-auto">
     <div class="home-inner-content">
