@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
 import { AuthService } from '../../services/auth.service';
-import { GlobalAuthService } from '../../../../commonServices/global-auth.service';
+import { GlobalAuthService } from '../../../../common/services/global-auth.service';
 import { LoginServerAnswer } from '../../interfaces/LoginServerAnswer';
 
 @Component({
@@ -28,7 +28,7 @@ export class LoginFormComponent implements OnInit {
         Validators.required,
         Validators.email
       ]),
-      password: new FormControl('',[
+      password: new FormControl('', [
         Validators.required,
         Validators.minLength(8)
       ])

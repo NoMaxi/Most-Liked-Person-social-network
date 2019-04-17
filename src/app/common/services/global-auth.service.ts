@@ -9,4 +9,8 @@ export class GlobalAuthService {
   get isLogin(): boolean {
     return !!localStorage.getItem('sn_app_token');
   }
+
+  get token() {
+    return localStorage.getItem('sn_app_token') || '';
+  }
 }

@@ -1,0 +1,22 @@
+<div class="home-container"
+     [ngStyle]="{ background: 'url(' + data?.homeBackground + ')' + 'center/cover no-repeat' }"
+>
+  <div class="home-inner-container mx-auto">
+    <div class="home-inner-content">
+      <h1 class="home-inner-title">Most Liked Person</h1>
+      <span class="home-inner-subtitle">Be Most Wanted</span>
+      <p class="home-inner-text">{{ data?.innerText }}</p>
+      <p class="home-inner-text">Please join us and express your opinion by voting on the photos.</p>
+    </div>
+  </div>
+
+  <div class="home-inner-bottom">
+    <div class="home-inner-bottom-details">
+      <span>{{ data?.cities }} Cities</span>
+      <span>{{ data?.countries }}
+        Countries</span>
+      <span>{{ data?.regions }} Regions</span>
+    </div>
+    <p class="home-inner-bottom-text">You can be one of the winners and we will introduce you to the world</p>
+  </div>
+</div>

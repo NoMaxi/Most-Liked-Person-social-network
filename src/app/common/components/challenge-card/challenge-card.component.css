@@ -1,0 +1,54 @@
+.challenge-card {
+  background-color: lightcyan;
+  background-size: cover;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding: 15px;
+  width: 450px;
+  position: relative;
+}
+
+.challenge-card:before {
+  background-color: rgba(0, 0, 0, 0.3);
+  content: '';
+  height: 100%;
+  width: 450px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.mat-card-header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.challenge-card-title {
+  color: gold;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.challenge-card-subtitle {
+  font-size: 16px;
+}
+
+.challenge-card-subtitle-active {
+  color: red;
+}
+
+.challenge-card-subtitle-closed {
+  color: dodgerblue;
+}
+
+.challenge-card-content {
+  padding: 10px;
+}
+
+.challenge-card-img {
+  max-width: 350px;
+  max-height: 350px;
+}

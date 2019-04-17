@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-import { environment } from '../../../../environments/environment';
+import { environment } from '@env/environment';
 import { LoginServerAnswer } from '../interfaces/LoginServerAnswer';
 import { ResetPasswordServerAnswer } from '../interfaces/ResetPasswordServerAnswer';
 import { SignupServerAnswer } from '../interfaces/SignupServerAnswer';

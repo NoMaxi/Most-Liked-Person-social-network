@@ -13,7 +13,7 @@ import { MessageService } from 'primeng/api';
 import { AuthService } from '../../services/auth.service';
 import { SignupInfo } from '../../interfaces/SignupInfo';
 import { SignupServerAnswer } from '../../interfaces/SignupServerAnswer';
-import { passwordEqualForInput } from '../../../../helpers/validators';
+import { passwordEqualForInput } from '@helpers/validators';
 
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {

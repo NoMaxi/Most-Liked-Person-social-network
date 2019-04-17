@@ -1,0 +1,22 @@
+.toolbar {
+  display: flex;
+  justify-content: center;
+  padding: 19px 0;
+  color: #fff;
+  background-color: #212121;
+}
+
+.toolbar-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+}
+
+.toolbar-notifications-list {
+  min-height: 250px;
+  max-width: 450px;
+}
+
+.fas.fa-bell {
+  cursor: pointer;
+}
