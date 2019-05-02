@@ -9,13 +9,8 @@ import { ChallengeData } from '../../../modules/home/interfaces/ChallengeData';
 })
 export class ChallengeCardComponent implements OnInit {
   @Input() challenge: ChallengeData;
-  startDate: string;
-  endDate: string;
 
   constructor() {}
 
-  ngOnInit() {
-    this.startDate = new Date(this.challenge.start_date).toLocaleString();
-    this.endDate = new Date(this.challenge.end_date).toLocaleString();
-  }
+  ngOnInit() {}
 }

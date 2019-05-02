@@ -10,5 +10,4 @@ export interface Notification {
   };
   user_target_id: string;
   __v: number;
-
 }

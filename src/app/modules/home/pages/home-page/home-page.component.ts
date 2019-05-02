@@ -14,6 +14,7 @@ import { ChallengeData } from '../../interfaces/ChallengeData';
 export class HomePageComponent implements OnInit {
   homePageData: HomePageData;
   challenges: ChallengeData[];
+  isLoading = true;
 
   constructor(
     private homeService: HomeService,
@@ -29,13 +30,15 @@ export class HomePageComponent implements OnInit {
         this.homePageData = homePageData;
         this.challenges = challenges;
       }, (err) => {
-        console.log(err);
+        console.error(err);
 
         this.messageService.add({
           severity: 'error',
           summary: 'Home page data load error',
-          detail: err.message
+          detail: err.error.message
         });
+      }, () => {
+        this.isLoading = false;
       });
   }
 }

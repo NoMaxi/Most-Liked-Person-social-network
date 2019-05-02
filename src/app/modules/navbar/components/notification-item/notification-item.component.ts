@@ -9,11 +9,8 @@ import { Notification } from '../../interfaces/Notification';
 })
 export class NotificationItemComponent implements OnInit {
   @Input() notification: Notification;
-  followStart: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-    this.followStart = new Date(this.notification.created_at).toLocaleString();
-  }
+  ngOnInit() {}
 }

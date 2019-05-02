@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.activatedRoute.data.subscribe((value) => {
-      console.log(value);
-    });
+    // this.activatedRoute.data.subscribe((value) => {
+    //   console.log(value);
+    // });
   }
 }

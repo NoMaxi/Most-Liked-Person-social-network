@@ -1,0 +1,18 @@
+<div class="upload-photos">
+  <label
+    for="upload-input"
+    class="upload-photos-input"
+  >
+    <span class="upload-photos-input-text">Upload Photos</span>
+  </label>
+  <input
+    id="upload-input"
+    style="visibility: hidden"
+    type="file"
+    multiple
+    (change)="loadPhotos($event.target)"
+  >
+</div>
+<ng-container *ngFor="let image of images">
+  <app-picture-preview [img]="image"></app-picture-preview>
+</ng-container>

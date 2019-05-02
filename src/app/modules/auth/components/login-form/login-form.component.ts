@@ -43,9 +43,15 @@ export class LoginFormComponent implements OnInit {
     this.authService.login({ ...this.loginForm.value }).subscribe((res: LoginServerAnswer) => {
       if (!res.error) {
         this.router.navigate(['/']);
+
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Login success',
+          detail: 'You have been successfully logged in'
+        });
       }
     }, (err) => {
-      console.log(err);
+      console.error(err);
       // reset password input field if the server returns an error
       this.loginForm.patchValue({ password: '' });
 

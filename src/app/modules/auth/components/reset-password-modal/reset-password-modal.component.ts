@@ -39,13 +39,19 @@ export class ResetPasswordModalComponent implements OnInit {
 
     this.authService.resetPassword(this.resetPasswordForm.value.email).subscribe((res: ResetPasswordServerAnswer) => {
       this.closeModal();
+
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Password reset success',
+        detail: 'Password has been successfully reset'
+      });
     }, (err) => {
       console.error(err);
 
       this.messageService.add({
         severity: 'error',
         summary: 'Reset password has failed',
-        detail: err.error.message,
+        detail: err.error.message
       });
     });
   }

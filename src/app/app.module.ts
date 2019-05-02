@@ -2,7 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { MatCardModule, MatToolbarModule } from '@angular/material';
+import {
+  MatCardModule,
+  MatProgressBarModule,
+  MatToolbarModule
+} from '@angular/material';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 
@@ -22,8 +26,9 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatCardModule,
+    MatProgressBarModule,
     ToastModule,
-    NavbarModule
+    NavbarModule,
   ],
   providers: [
     MessageService,

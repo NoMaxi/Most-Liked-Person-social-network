@@ -95,7 +95,6 @@ export class SignupFormComponent implements OnInit {
     // with the same field names as the SignupInfo interface, but the camelCase
     // style won't be sustained; so I decided to create the userData variable (^_^)
     this.authService.signup(userData).subscribe((res: SignupServerAnswer) => {
-      console.log(res);
       if (!res.error) {
         this.router.navigate(['/auth/login']);
       }
