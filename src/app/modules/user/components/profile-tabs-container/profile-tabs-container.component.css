@@ -1,4 +1,13 @@
-app-profile-selfies {
+app-profile-selfies,
+app-profile-glories,
+app-profile-favourites,
+app-profile-followers,
+app-profile-followings {
   display: flex;
   flex-wrap: wrap;
+}
+
+app-profile-glories {
+  justify-content: center;
+  padding-top: 45px;
 }

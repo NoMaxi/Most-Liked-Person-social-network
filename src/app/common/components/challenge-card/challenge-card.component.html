@@ -17,11 +17,12 @@
   </mat-card-header>
 
   <mat-card-content class="challenge-card-content">
-    <img *ngIf="challenge.last_picture"
-         class="challenge-card-img"
-         mat-card-image
-         [src]="challenge.last_picture"
-         alt="last picture"
+    <img
+      *ngIf="challenge.last_picture"
+      class="challenge-card-img"
+      mat-card-image
+      [src]="challenge.last_picture"
+      alt="last picture"
     >
     <p>Start date: {{ challenge?.start_date | date: 'dd.MM.yyyy, HH:mm' }}</p>
     <p>End date: {{ challenge?.end_date | date: 'dd.MM.yyyy, HH:mm' }}</p>

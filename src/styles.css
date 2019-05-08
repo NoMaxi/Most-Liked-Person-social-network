@@ -8,7 +8,7 @@ body {
   margin: 0;
 }
 
-/* Default classes */
+/* Default styles */
 .w-100 {
   width: 100%;
 }
@@ -33,4 +33,10 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+/* Custom styles */
+.toolbar .ui-overlaypanel-content {
+  max-height: 515px;
+  overflow: auto;
 }

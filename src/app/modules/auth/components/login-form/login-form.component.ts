@@ -5,6 +5,7 @@ import { MessageService } from 'primeng/api';
 
 import { AuthService } from '../../services/auth.service';
 import { GlobalAuthService } from '../../../../common/services/global-auth.service';
+import { CurrentUserStoreService } from '../../../../common/services/current-user-store.service';
 import { LoginServerAnswer } from '../../interfaces/LoginServerAnswer';
 
 @Component({
@@ -19,7 +20,8 @@ export class LoginFormComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private globalAuthService: GlobalAuthService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private currentUser: CurrentUserStoreService
   ) {}
 
   ngOnInit() {
@@ -42,6 +44,7 @@ export class LoginFormComponent implements OnInit {
   onSubmit() {
     this.authService.login({ ...this.loginForm.value }).subscribe((res: LoginServerAnswer) => {
       if (!res.error) {
+        this.currentUser.initCurrentUser();
         this.router.navigate(['/']);
 
         this.messageService.add({
@@ -52,12 +55,11 @@ export class LoginFormComponent implements OnInit {
       }
     }, (err) => {
       console.error(err);
-      // reset password input field if the server returns an error
       this.loginForm.patchValue({ password: '' });
 
       this.messageService.add({
         severity: 'error',
-        summary: 'Login has failed',
+        summary: 'Login fail',
         detail: err.error.message,
       });
     });

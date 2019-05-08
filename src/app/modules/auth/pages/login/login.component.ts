@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 export class LoginComponent implements OnInit {
   resetPasswordModal = false;
 
-  constructor(
-    private activatedRoute: ActivatedRoute
-  ) { }
+  constructor() {}
 
-  ngOnInit() {
-    // this.activatedRoute.data.subscribe((value) => {
-    //   console.log(value);
-    // });
-  }
+  ngOnInit() {}
 }

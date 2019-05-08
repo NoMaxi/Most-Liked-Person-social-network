@@ -3,6 +3,7 @@ import { MessageService } from 'primeng/api';
 
 import { GlobalAuthService } from '../../../../common/services/global-auth.service';
 import { UserService } from '../../../../common/services/user.service';
+import { CurrentUserStoreService } from '../../../../common/services/current-user-store.service';
 import { UserImages } from '../../interfaces/UserImages';
 import { UserImage } from '../../interfaces/UserImage';
 
@@ -17,7 +18,8 @@ export class ProfileSelfiesComponent implements OnInit {
   constructor(
     private globalAuthService: GlobalAuthService,
     private userService: UserService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private currentUserStoreService: CurrentUserStoreService
   ) {}
 
   ngOnInit() {
@@ -30,6 +32,13 @@ export class ProfileSelfiesComponent implements OnInit {
       if (data.images) {
         this.images = data.images;
       }
+    }, (err) => {
+      console.error(err);
+      this.messageService.add({
+        severity: 'error',
+        summary: 'User photos load error',
+        detail: err.error.message
+      });
     });
   }
 
@@ -38,6 +47,7 @@ export class ProfileSelfiesComponent implements OnInit {
     this.userService.uploadPhotos(files).subscribe((res) => {
       if (!res.error) {
         this.getImages();
+        this.currentUserStoreService.initCurrentUser();
         this.messageService.add({
           severity: 'success',
           summary: files.length === 1 ? 'Photo upload' : 'Photos upload',

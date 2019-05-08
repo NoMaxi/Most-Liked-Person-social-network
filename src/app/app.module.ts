@@ -5,7 +5,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {
   MatCardModule,
   MatProgressBarModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatButtonModule
 } from '@angular/material';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
@@ -17,7 +18,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +28,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     MatToolbarModule,
     MatCardModule,
     MatProgressBarModule,
+    MatButtonModule,
     ToastModule,
     NavbarModule,
   ],

@@ -24,10 +24,12 @@ export class NavbarComponent implements OnInit {
     private router: Router,
     private navbarService: NavbarService,
     private messageService: MessageService,
-    private currentUser: CurrentUserStoreService
+    private currentUserStoreService: CurrentUserStoreService
   ) {}
 
   ngOnInit() {
+    this.currentUserStoreService.initCurrentUser();
+
     this.router.events.pipe(
       filter((event) => event instanceof ActivationEnd)
     ).subscribe((event) => {
@@ -49,7 +51,7 @@ export class NavbarComponent implements OnInit {
       });
     });
 
-    this.currentUser.userWatcher.subscribe(({ avatar, _id }) => {
+    this.currentUserStoreService.userWatcher.subscribe(({ avatar, _id }) => {
       if (_id) {
         this.userAvatar = avatar;
         this.userId = _id;

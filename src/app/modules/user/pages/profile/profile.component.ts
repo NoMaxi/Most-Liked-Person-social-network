@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { GlobalAuthService } from '../../../../common/services/global-auth.service';
 import { UserService } from '../../../../common/services/user.service';
+import { CurrentUserStoreService } from '../../../../common/services/current-user-store.service';
 import { User } from '../../interfaces/User';
 
 @Component({
@@ -18,13 +19,19 @@ export class ProfileComponent implements OnInit {
   constructor(
     private globalAuth: GlobalAuthService,
     private userService: UserService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private currentUserStoreService: CurrentUserStoreService
   ) {}
 
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
     this.authUserId = this.globalAuth.userId;
     this.getUser();
+    this.currentUserStoreService.userWatcher.subscribe((user: User) => {
+      if (user._id) {
+        this.user = user;
+      }
+    });
   }
 
   getUser() {

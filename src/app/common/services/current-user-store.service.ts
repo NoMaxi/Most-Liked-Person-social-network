@@ -20,7 +20,7 @@ export class CurrentUserStoreService {
     private globalAuth: GlobalAuthService
   ) {}
 
-  public get info(): object {
+  public get info() {
     return this.currentUser;
   }
 

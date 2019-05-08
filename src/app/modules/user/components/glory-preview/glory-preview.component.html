@@ -1,0 +1,22 @@
+<div class="glory-preview">
+  <ng-container *ngIf="achievement.picture_id">
+    <img
+      class="glory-preview-photo"
+      [src]="achievement?.picture_id.url || ''"
+      alt="achievement photo preview"
+    >
+  </ng-container>
+  <ng-container *ngIf="!achievement.picture_id">
+    <div class="glory-preview-photo glory-preview-without-photo"></div>
+  </ng-container>
+  <div
+    class="glory-preview-foreground"
+    [ngClass]="{ 'glory-preview-foreground-without-photo': !achievement.picture_id }"
+  >
+    <img
+      class="glory-preview-foreground-img"
+      [src]="achievement?.achievement_url || ''"
+      alt="achievement preview"
+    >
+  </div>
+</div>

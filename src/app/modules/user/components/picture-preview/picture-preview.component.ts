@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { UserImage } from '../../interfaces/UserImage';
+import { UserFavouriteImage } from '../../interfaces/UserFavouriteImage';
 
 @Component({
   selector: 'app-picture-preview',
@@ -8,9 +9,9 @@ import { UserImage } from '../../interfaces/UserImage';
   styleUrls: ['./picture-preview.component.css']
 })
 export class PicturePreviewComponent implements OnInit {
-  @Input() img: UserImage;
+  @Input() img: UserImage | UserFavouriteImage;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
 }

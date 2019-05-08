@@ -10,7 +10,7 @@ import { Notification } from '../../interfaces/Notification';
 export class NotificationsListComponent implements OnInit {
   @Input() notifications: Notification[];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
 }
