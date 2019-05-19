@@ -30,7 +30,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     MatProgressBarModule,
     MatButtonModule,
     ToastModule,
-    NavbarModule,
+    NavbarModule
   ],
   providers: [
     MessageService,
@@ -40,6 +40,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
       multi: true
     }
   ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

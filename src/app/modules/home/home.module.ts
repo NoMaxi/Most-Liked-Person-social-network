@@ -13,7 +13,7 @@ import { LoaderModule } from '../loader/loader.module';
 
 @NgModule({
   declarations: [
-    HomePageComponent,
+    HomePageComponent, 
     HomeInnerComponent,
     ChallengeCardComponent,
     ChallengesListComponent,
@@ -27,4 +27,4 @@ import { LoaderModule } from '../loader/loader.module';
   ],
   providers: [HomeService]
 })
-export class HomeModule { }
+export class HomeModule {}

@@ -37,7 +37,7 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     CommonModule,
     UserRoutingModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
   ]
 })
 export class UserModule { }

@@ -50,7 +50,7 @@ export class LoginFormComponent implements OnInit {
         this.messageService.add({
           severity: 'success',
           summary: 'Login success',
-          detail: 'You have been successfully logged in'
+          detail: 'You have successfully logged in'
         });
       }
     }, (err) => {

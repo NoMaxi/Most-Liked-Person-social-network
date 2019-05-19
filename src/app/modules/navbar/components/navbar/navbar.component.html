@@ -8,6 +8,18 @@
       Home
     </a>
     <a
+      href=""
+      [routerLink]="['/winners']"
+    >
+      Winners
+    </a>
+    <a
+      href=""
+      [routerLink]="['/news']"
+    >
+      News Feed
+    </a>
+    <a
       *ngIf="userId"
       href=""
       [routerLink]="['/users/', userId]"

@@ -12,6 +12,8 @@ import { UserGlories } from '../../modules/user/interfaces/UserGlories';
 import { UserFavourites } from '../../modules/user/interfaces/UserFavourites';
 import { UserFollowers } from '../../modules/user/interfaces/UserFollowers';
 import { UserFollowServerAnswer } from '../../modules/user/interfaces/UserFollowServerAnswer';
+import { Winners } from '../../modules/winners/interfaces/Winners';
+import { News } from '../../modules/news/interfaces/News';
 
 @Injectable({
   providedIn: 'root'
@@ -90,5 +92,19 @@ export class UserService {
 
   userFollowToggle(id: string): Observable<UserFollowServerAnswer> {
     return this.http.put<UserFollowServerAnswer>(`${this.apiUrl}/public/users/following/${id}`, {});
+  }
+
+  getWinners(part: number = 1, limit: number = 0): Observable<Winners> {
+    const params = new HttpParams()
+      .set('part', `${part}`)
+      .set('limit', `${limit}`);
+    return this.http.get<Winners>(`${this.apiUrl}/public/winners`, { params });
+  }
+
+  getNews(part: number = 1, count: number = 0): Observable<News> {
+    const params = new HttpParams()
+      .set('part', `${part}`)
+      .set('count', `${count}`);
+    return this.http.get<News>(`${this.apiUrl}/public/news`, { params });
   }
 }

@@ -1,0 +1,21 @@
+.winners-container {
+  background-color: #f2f2f2;
+  padding: 80px 0;
+}
+
+.winners-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 1200px;
+  scrollbar-width: none; /* Firefox*/
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.winners-list-container::-webkit-scrollbar {
+  display: none; /* Chrome and Safari */
+}
+
+app-winners-list-item {
+  display: inline-block;
+}

@@ -4,6 +4,15 @@
 @import "~primeng/resources/themes/nova-light/theme.css";
 @import "~primeng/resources/primeng.min.css";
 
+/*html {*/
+/*  -ms-overflow-style: none;*/
+/*  scrollbar-width: none;*/
+/*}*/
+
+/*::-webkit-scrollbar {*/
+/*  display: none;*/
+/*}*/
+
 body {
   margin: 0;
 }

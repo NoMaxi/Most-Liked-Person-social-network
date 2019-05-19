@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@env/*": ["environments/*"],
-      "@helpers/*": ["app/helpers/*"]
+      "@helpers/*": ["app/helpers/*"],
+      "@assets/*": ["assets/*"]
     }
   }
 }
