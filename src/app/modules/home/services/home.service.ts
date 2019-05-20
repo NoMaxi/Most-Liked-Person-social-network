@@ -22,7 +22,7 @@ export class HomeService {
     let params = new HttpParams();
     params = params.append('isActive', '0')
       .append('isClosed', '1')
-      .append('limit', '6');
+      .append('count', '6');
     const httpOptions = {
       params
     };

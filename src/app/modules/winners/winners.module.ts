@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 import { WinnersRoutingModule } from './winners-routing.module';
-import { ImgLoaderDirective } from '../../common/directives/img-loader.directive';
+import { SharedModule } from '../shared/shared.module';
 import { WinnersComponent } from './pages/winners/winners.component';
 import { WinnersCoverComponent } from './components/winners-cover/winners-cover.component';
 import { WinnersListComponent } from './components/winners-list/winners-list.component';
@@ -14,13 +14,13 @@ import { WinnersListItemComponent } from './components/winners-list-item/winners
     WinnersComponent,
     WinnersCoverComponent,
     WinnersListComponent,
-    WinnersListItemComponent,
-    ImgLoaderDirective
+    WinnersListItemComponent
   ],
   imports: [
     CommonModule,
-    WinnersRoutingModule,
-    ScrollingModule
+    ScrollingModule,
+    SharedModule,
+    WinnersRoutingModule
   ],
   providers: []
 })

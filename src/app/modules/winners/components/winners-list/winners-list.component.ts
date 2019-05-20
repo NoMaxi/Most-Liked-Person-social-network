@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MessageService } from 'primeng/api';
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import { MessageService } from 'primeng/api';
 
 import { UserService } from '../../../../common/services/user.service';
 import { Winners } from '../../interfaces/Winners';
@@ -21,9 +21,9 @@ export class WinnersListComponent implements OnInit {
   constructor(
     private userService: UserService,
     private messageService: MessageService
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   getWinnersList() {
     this.userService.getWinners(this.part, this.limit).subscribe((data: Winners) => {

@@ -47,8 +47,8 @@ export class UserService {
 
   getUserImages(id: string): Observable<UserImages> {
     const params = new HttpParams()
-      .set('part', '1')
-      .set('limit', '30');
+      .set('page', '1')
+      .set('count', '30');
     return this.http.get<UserImages>(`${this.apiUrl}/public/users/my-images/${id}`, { params });
   }
 
@@ -61,31 +61,31 @@ export class UserService {
 
   getUserGlories(id: string): Observable<UserGlories> {
     const params = new HttpParams()
-      .set('part', '1')
-      .set('limit', '15');
+      .set('page', '1')
+      .set('count', '15');
     return this.http.get<UserGlories>(`${this.apiUrl}/public/users/glories/${id}`, { params });
   }
 
   getUserFavourites(id: string): Observable<UserFavourites> {
     const params = new HttpParams()
-      .set('part', '1')
-      .set('limit', '30');
+      .set('page', '1')
+      .set('count', '30');
     return this.http.get<UserFavourites>(`${this.apiUrl}/public/users/my-favorites/${id}`,
       { params });
   }
 
   getUserFollowers(id: string): Observable<UserFollowers> {
     const params = new HttpParams()
-      .set('part', '1')
-      .set('limit', '30')
+      .set('page', '1')
+      .set('count', '30')
       .set('path', 'followings');
     return this.http.get<UserFollowers>(`${this.apiUrl}/public/users/my-followers-followings/${id}`, { params });
   }
 
   getUserFollowings(id: string): Observable<UserFollowers> {
     const params = new HttpParams()
-      .set('part', '1')
-      .set('limit', '30')
+      .set('page', '1')
+      .set('count', '30')
       .set('path', 'followers');
     return this.http.get<UserFollowers>(`${this.apiUrl}/public/users/my-followers-followings/${id}`, { params });
   }
@@ -96,14 +96,14 @@ export class UserService {
 
   getWinners(part: number = 1, limit: number = 0): Observable<Winners> {
     const params = new HttpParams()
-      .set('part', `${part}`)
-      .set('limit', `${limit}`);
+      .set('page', `${part}`)
+      .set('count', `${limit}`);
     return this.http.get<Winners>(`${this.apiUrl}/public/winners`, { params });
   }
 
-  getNews(part: number = 1, count: number = 0): Observable<News> {
+  getNews(page: number = 1, count: number = 0): Observable<News> {
     const params = new HttpParams()
-      .set('part', `${part}`)
+      .set('page', `${page}`)
       .set('count', `${count}`);
     return this.http.get<News>(`${this.apiUrl}/public/news`, { params });
   }

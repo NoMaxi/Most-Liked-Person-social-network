@@ -1,3 +1,29 @@
-<p>
-  news-list-item works!
-</p>
+<mat-card class="news-item-card">
+  <mat-card-header>
+    <div
+      mat-card-avatar
+      class="user-card-avatar-img"
+    ></div>
+    <mat-card-title class="news-item-title">
+      {{ newsItem?.owner.full_name }}
+    </mat-card-title>
+    <mat-card-subtitle class="news-item-subtitle">
+      {{ newsItem?.owner.country }}
+    </mat-card-subtitle>
+    <span class="news-item-text">Uploaded {{ newsItem?.pictures.length }} photos</span>
+    <span class="news-item-text">{{ newsItem?.date }} ago</span>
+    <mat-card-actions>
+      <button>{{ 'Following' }}</button>
+    </mat-card-actions>
+  </mat-card-header>
+
+  <mat-card-content>
+    <img
+      mat-card-image
+      [appImgLoader]="newsItem.pictures[0].url"
+      class="news-item-picture"
+      src=""
+      alt="news item"
+    >
+  </mat-card-content>
+</mat-card>
