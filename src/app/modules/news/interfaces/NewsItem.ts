@@ -1,7 +1,7 @@
 export interface NewsItem {
   date: string;
   owner: {
-    avatar: string;
+    avatar: string
     country: string;
     full_name: string;
     _id: string;

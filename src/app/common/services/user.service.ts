@@ -96,8 +96,8 @@ export class UserService {
 
   getWinners(part: number = 1, limit: number = 0): Observable<Winners> {
     const params = new HttpParams()
-      .set('page', `${part}`)
-      .set('count', `${limit}`);
+      .set('part', `${part}`)
+      .set('limit', `${limit}`);
     return this.http.get<Winners>(`${this.apiUrl}/public/winners`, { params });
   }
 

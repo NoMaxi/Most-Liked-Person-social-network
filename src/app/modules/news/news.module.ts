@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { MatCardModule } from '@angular/material';
+import { MatButtonModule, MatCardModule } from '@angular/material';
 
 import { NewsRoutingModule } from './news-routing.module';
 import { SharedModule } from '../shared/shared.module';
@@ -21,6 +21,7 @@ import { NewsListItemComponent } from './components/news-list-item/news-list-ite
     NewsRoutingModule,
     ScrollingModule,
     MatCardModule,
+    MatButtonModule,
     SharedModule
   ]
 })

@@ -33,6 +33,7 @@ export class NewsListComponent implements OnInit {
 
       if (data.news) {
         this.news = [...this.news, ...data.news];
+        // this.news = this.news.concat(data.news);
       }
     }, (err) => {
       console.error(err);

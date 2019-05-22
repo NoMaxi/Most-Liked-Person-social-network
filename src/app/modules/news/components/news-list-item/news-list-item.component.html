@@ -4,25 +4,37 @@
       <div class="user-avatar" mat-card-avatar>
         <img
           class="user-avatar-image"
-          [src]="newsItem.owner.avatar"
+          [src]="newsItem?.owner.avatar"
           alt="user avatar"
         >
       </div>
       <div class="author-info">
-        <mat-card-title class="author-name">
+        <span class="author-name">
           {{ newsItem?.owner.full_name }}
-        </mat-card-title>
-        <mat-card-subtitle class="author-country">
+        </span>
+        <span class="author-country">
           {{ newsItem?.owner.country }}
-        </mat-card-subtitle>
+        </span>
       </div>
     </div>
     <div class="news-item-upload-info">
       <span class="upload-count">Uploaded {{ newsItem?.pictures.length }}
         photos</span>
-      <span class="upload-date">{{ newsItem?.date }} ago</span></div>
-    <mat-card-actions>
-      <button>{{ 'Following' }}</button>
+      <span class="upload-date">{{ timeSinceUpload }} ago</span>
+    </div>
+    <mat-card-actions class="news-item-actions">
+      <ng-container *ngIf="!isCurrentUser">
+        <button
+          mat-button
+          class="news-item-button"
+          [ngClass]="{ 'news-item-button-gradient': !isFollowed }"
+          (click)="onBtnClick()"
+        >
+        <span class="news-item-button-text">
+          {{ isFollowed ? 'following' : 'follow' }}
+        </span>
+        </button>
+      </ng-container>
     </mat-card-actions>
   </mat-card-header>
 
@@ -30,10 +42,8 @@
     <div class="news-item-image-container">
       <img
         [appImgLoader]="newsItem.pictures[0].url"
-        alt="news item"
         class="news-item-image"
-        mat-card-image
-        src=""
+        alt="news image"
       ></div>
   </mat-card-content>
 </mat-card>
