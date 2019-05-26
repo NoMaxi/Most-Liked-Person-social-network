@@ -27,7 +27,6 @@ export class WinnersListComponent implements OnInit {
 
   getWinnersList() {
     this.userService.getWinners(this.part, this.limit).subscribe((data: Winners) => {
-      console.log(data);
       if (data.winners.length < this.limit) {
         this.gotLastBatch = true;
       }
@@ -42,7 +41,6 @@ export class WinnersListComponent implements OnInit {
           }
         });
         this.winners = [...this.winners, ...correctWinners];
-        console.log(this.winners);
       }
     }, (err) => {
       console.error(err);

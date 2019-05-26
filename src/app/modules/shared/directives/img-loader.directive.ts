@@ -19,7 +19,7 @@ export class ImgLoaderDirective implements OnInit, OnChanges {
   constructor() {}
 
   ngOnInit() {
-    this.transition = 'opacity .5s ease-in 0s';
+    this.transition = 'opacity .4s ease-in';
   }
 
   ngOnChanges(changes: SimpleChanges) {

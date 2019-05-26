@@ -3,8 +3,10 @@ import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { MessageService } from 'primeng/api';
 
 import { UserService } from '../../../../common/services/user.service';
+import { CurrentUserStoreService } from '../../../../common/services/current-user-store.service';
 import { News } from '../../interfaces/News';
 import { NewsItem } from '../../interfaces/NewsItem';
+import { User } from '../../../user/interfaces/User';
 
 @Component({
   selector: 'app-news-list',
@@ -13,6 +15,7 @@ import { NewsItem } from '../../interfaces/NewsItem';
 })
 export class NewsListComponent implements OnInit {
   @ViewChild(CdkVirtualScrollViewport) viewport: CdkVirtualScrollViewport;
+  currentUser: User;
   news: NewsItem[] = [];
   page = 1;
   count = 15;
@@ -20,10 +23,18 @@ export class NewsListComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private currentUserStoreService: CurrentUserStoreService
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    // this.getNewsList();
+    this.currentUserStoreService.userWatcher.subscribe((data: User) => {
+      if (data._id) {
+        this.currentUser = data;
+      }
+    });
+  }
 
   getNewsList() {
     this.userService.getNews(this.page, this.count).subscribe((data: News) => {
@@ -33,7 +44,6 @@ export class NewsListComponent implements OnInit {
 
       if (data.news) {
         this.news = [...this.news, ...data.news];
-        // this.news = this.news.concat(data.news);
       }
     }, (err) => {
       console.error(err);

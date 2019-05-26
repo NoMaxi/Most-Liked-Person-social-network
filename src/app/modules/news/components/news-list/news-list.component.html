@@ -1,13 +1,26 @@
 <div class="news-container">
   <cdk-virtual-scroll-viewport
-    class="news-list-container mx-auto"
-    [itemSize]="100"
+    class="news-list-container"
+    [itemSize]="300"
     (scrolledIndexChange)="onScrollChange($event)"
   >
-    <ng-container *cdkVirtualFor="let newsItem of news; trackBy: trackByIndex">
-      <app-news-list-item
-        [newsItem]="newsItem"
-      ></app-news-list-item>
-    </ng-container>
+    <div class="news-list-container-inner mx-auto">
+      <ng-container
+        *cdkVirtualFor="let newsItem of news; trackBy: trackByIndex">
+        <app-news-list-item
+          [newsItem]="newsItem"
+          [currentUser]="currentUser"
+        ></app-news-list-item>
+      </ng-container>
+    </div>
   </cdk-virtual-scroll-viewport>
 </div>
+
+<!--<div class="news-container">-->
+<!--  <ng-container *ngFor="let newsItem of news">-->
+<!--    <app-news-list-item-->
+<!--      [newsItem]="newsItem"-->
+<!--      [currentUser]="currentUser"-->
+<!--    ></app-news-list-item>-->
+<!--  </ng-container>-->
+<!--</div>-->

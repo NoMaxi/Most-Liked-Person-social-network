@@ -14,10 +14,18 @@
       Winners
     </a>
     <a
+      *ngIf="userId"
       href=""
       [routerLink]="['/news']"
     >
       News Feed
+    </a>
+    <a
+      *ngIf="!userId"
+      href=""
+      [routerLink]="['/auth/login']"
+    >
+      Login
     </a>
     <a
       *ngIf="userId"
