@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://mostlikedperson-api.herokuapp.com/api'
+  apiUrl: 'https://mlp-demo.herokuapp.com/api'
 };
 
 /*
