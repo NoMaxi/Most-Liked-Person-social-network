@@ -1,8 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/themes/nova-light/theme.css";
+@import "~primeng/resources/primeng.min.css";
 
-/* Default classes */
+body {
+  margin: 0;
+}
+
+/* Default styles */
 .w-100 {
   width: 100%;
 }
 
+.w-50 {
+  width: 50%;
+}
+
+.w-35 {
+  width: 35%;
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+.ui-toast {
+  margin: 1rem;
+  min-width: 200px;
+  max-width: 450px
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+/* Custom styles */
+.toolbar .ui-overlaypanel-content {
+  max-height: 515px;
+  overflow: auto;
+}

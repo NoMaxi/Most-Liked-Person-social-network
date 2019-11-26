@@ -1,0 +1,35 @@
+<mat-card class="user-card">
+  <div class="user-card-inner">
+    <div
+      class="user-card-bg"
+      [ngStyle]="{ background: 'url(' + user?.cover + ') center/cover no-repeat' }"
+    ></div>
+    <div class="user-card-avatar">
+      <img
+        class="user-card-avatar-img"
+        [src]="user.avatar"
+        alt="user avatar">
+    </div>
+
+    <mat-card-content class="user-card-content">
+      <mat-card-title class="user-card-title">
+        {{ user.full_name }}
+      </mat-card-title>
+      <mat-card-subtitle class="user-card-subtitle">
+        {{ user.city }}
+      </mat-card-subtitle>
+    </mat-card-content>
+
+    <button
+      mat-button
+      class="user-card-button"
+      [ngClass]="{ 'user-card-button-gradient': !isFollowed }"
+      (click)="onBtnClick()"
+    >
+      <span class="user-card-button-text">
+        {{ isFollowed ? 'following' : 'follow' }}
+      </span>
+    </button>
+  </div>
+</mat-card>
+

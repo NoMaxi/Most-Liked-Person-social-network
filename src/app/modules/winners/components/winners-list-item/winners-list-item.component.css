@@ -1,0 +1,12 @@
+.winners-list-item {
+  height: 300px;
+  max-width: 700px;
+  overflow: hidden;
+  padding: 0 2px;
+}
+
+.winners-list-item-img {
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}

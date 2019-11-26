@@ -1,0 +1,23 @@
+.winners-container {
+  padding: 80px 0;
+}
+
+.winners-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  scrollbar-width: none; /* Firefox*/
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.winners-list-container::-webkit-scrollbar {
+  display: none; /* Chrome and Safari */
+}
+
+.winners-list-container-inner {
+  width: 1200px;
+}
+
+app-winners-list-item {
+  display: inline-block;
+}

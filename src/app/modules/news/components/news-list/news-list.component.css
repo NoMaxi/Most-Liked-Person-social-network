@@ -1,0 +1,13 @@
+.news-list-container {
+  height: 100vh;
+  scrollbar-width: none; /* Firefox*/
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.news-list-container::-webkit-scrollbar {
+  display: none; /* Chrome and Safari */
+}
+
+.news-list-container-inner {
+  width: 1200px;
+}

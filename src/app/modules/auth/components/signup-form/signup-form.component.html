@@ -1,0 +1,190 @@
+<form
+  [formGroup]="signUpForm"
+  (ngSubmit)="onSubmit()"
+>
+  <!-- First name -->
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="First name"
+      formControlName="firstName"
+    >
+    <mat-error *ngIf="signUpForm.get('firstName').hasError('required')">
+      First name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Last name -->
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="Last name"
+      formControlName="lastName"
+    >
+    <mat-error *ngIf="signUpForm.get('lastName').hasError('required')">
+      Last name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Nickname -->
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="Nickname"
+      formControlName="nickname"
+    >
+    <mat-error *ngIf="signUpForm.get('nickname').hasError('required')">
+      Nickname is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Gender -->
+  <mat-form-field class="w-100">
+    <!-- "Костыль" - the issue fix for radio-button stop logging the Error -->
+    <!-- Error: mat-form-field must contain a MatFormFieldControl -->
+    <!-- https://github.com/angular/material2/issues/7891#issuecomment-338510180 -->
+    <input matInput style="display: none">
+
+    <label id="gender-radio-group">Gender:</label>
+    <mat-radio-group
+      aria-label="gender-radio-group"
+      formControlName="gender"
+    >
+      <mat-radio-button
+        *ngFor="let gender of genders"
+        class="gender-radio-button"
+        [value]="gender"
+      >
+        {{ gender }}
+      </mat-radio-button>
+    </mat-radio-group>
+    <mat-error *ngIf="signUpForm.get('gender').hasError('required')">
+      Gender is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Birth date -->
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      [matDatepicker]="birthDatePicker"
+      [min]="minBirthDate"
+      [max]="maxBirthDate"
+      placeholder="Birth date"
+      formControlName="birthDate"
+    >
+    <mat-datepicker-toggle
+      matSuffix
+      [for]="birthDatePicker"
+    >
+    </mat-datepicker-toggle>
+    <mat-datepicker #birthDatePicker></mat-datepicker>
+    <mat-error *ngIf="signUpForm.get('birthDate').hasError('required')">
+      Birth date is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Country -->
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="Country"
+      formControlName="country"
+    >
+    <mat-error *ngIf="signUpForm.get('country').hasError('required')">
+      Country is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- City -->
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="City"
+      formControlName="city"
+    >
+    <mat-error *ngIf="signUpForm.get('city').hasError('required')">
+      City is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Phone -->
+  <mat-form-field class="w-100">
+    <input
+      matInput
+      placeholder="Phone number"
+      formControlName="phone"
+    >
+    <mat-error *ngIf="signUpForm.get('phone').hasError('required')">
+      Phone number is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="signUpForm.get('phone').hasError('pattern')
+    && !signUpForm.get('phone').hasError('required')">
+      Phone number is <strong>incorrect</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Email -->
+  <mat-form-field class="w-100">
+    <input
+      type="email"
+      matInput
+      placeholder="Email"
+      formControlName="email"
+    >
+    <mat-error *ngIf="signUpForm.get('email').hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="signUpForm.get('email').hasError('email')
+    && !signUpForm.get('email').hasError('required')">
+      Email is <strong>incorrect</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Password -->
+  <mat-form-field class="w-100">
+    <input
+      type="password"
+      matInput
+      placeholder="Password"
+      formControlName="password"
+    >
+    <mat-error *ngIf="signUpForm.get('password').hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="signUpForm.get('password').hasError('minLength')
+    && !signUpForm.get('password').hasError('required')">
+      Password is <strong>too short</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Repeat password -->
+  <mat-form-field class="w-100">
+    <input
+      type="password"
+      matInput
+      placeholder="Repeat Password"
+      formControlName="repeatPassword"
+      [errorStateMatcher]="matcher"
+    >
+    <mat-error *ngIf="signUpForm.get('repeatPassword').hasError('required')">
+      Repeated password is <strong>required</strong>
+    </mat-error>
+    <mat-error *ngIf="signUpForm.get('repeatPassword').hasError('notEqual')
+    && !signUpForm.get('repeatPassword').hasError('required')">
+      Passwords are <strong>not equal</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Submit button -->
+  <button
+    class="submit-btn"
+    color="primary"
+    mat-raised-button
+    [disabled]="signUpForm.invalid"
+  >
+    Signup
+  </button>
+</form>
+
+

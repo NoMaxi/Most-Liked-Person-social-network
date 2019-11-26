@@ -1,0 +1,17 @@
+<div class="winners-container">
+  <cdk-virtual-scroll-viewport
+    class="winners-list-container"
+    [itemSize]="150"
+    (scrolledIndexChange)="onScrollChange($event)"
+  >
+    <div class="winners-list-container-inner mx-auto">
+      <ng-container
+        *cdkVirtualFor="let winner of winners; trackBy: trackByIndex">
+        <app-winners-list-item
+          [imgSrc]="winner.member_id.images[0].image_basic.url"
+        ></app-winners-list-item>
+      </ng-container>
+    </div>
+  </cdk-virtual-scroll-viewport>
+</div>
+

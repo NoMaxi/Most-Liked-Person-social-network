@@ -1,0 +1,18 @@
+<div class="toolbar-notification-item">
+  <div class="notification-user-avatar">
+    <img
+      class="notification-user-img"
+      [src]="notification.user_creator_id.avatar"
+      alt="user avatar"
+    >
+  </div>
+  <div class="toolbar-notification-content">
+    <p>
+      <span class="notification-user-name">
+        {{ notification.user_creator_id.full_name }}
+      </span>
+      {{ notification.message }}
+    </p>
+    <p>{{ notification.created_at | date: 'dd.MM.yyyy, HH:mm' }}</p>
+  </div>
+</div>

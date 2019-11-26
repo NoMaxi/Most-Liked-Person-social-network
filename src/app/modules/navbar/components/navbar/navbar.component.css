@@ -1,0 +1,30 @@
+.toolbar {
+  display: flex;
+  justify-content: center;
+  background-color: #212121;
+  color: #fff;
+  height: 81px;
+  padding: 19px 0;
+}
+
+.toolbar-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 1200px;
+}
+
+.toolbar-inner a {
+  text-transform: uppercase;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+
+.toolbar-notifications-list {
+  min-height: 150px;
+  width: 420px;
+  max-height: 600px;
+}
+
+.fas.fa-bell {
+  cursor: pointer;
+}

@@ -1,0 +1,54 @@
+<mat-toolbar *ngIf="!isHidden" class="toolbar">
+  <div class="toolbar-inner">
+    <a
+      href=""
+      class="logo"
+      [routerLink]="['/']"
+    >
+      Home
+    </a>
+    <a
+      href=""
+      [routerLink]="['/winners']"
+    >
+      Winners
+    </a>
+    <a
+      *ngIf="userId"
+      href=""
+      [routerLink]="['/news']"
+    >
+      News Feed
+    </a>
+    <a
+      *ngIf="!userId"
+      href=""
+      [routerLink]="['/auth/login']"
+    >
+      Login
+    </a>
+    <a
+      *ngIf="userId"
+      href=""
+      [routerLink]="['/users/', userId]"
+    >
+      User profile
+    </a>
+    <div class="notifications-menu">
+      <i
+        class="fa-icon fas fa-bell"
+        matBadge="{{ unreadNotifications?.length }}"
+        matBadgeColor="warn"
+        [matBadgeHidden]="!unreadNotifications?.length"
+        (click)="op.toggle($event)"
+      ></i>
+    </div>
+  </div>
+
+  <p-overlayPanel #op [dismissable]="true">
+    <app-notifications-list
+      class="toolbar-notifications-list"
+      [notifications]="notifications"
+    ></app-notifications-list>
+  </p-overlayPanel>
+</mat-toolbar>

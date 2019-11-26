@@ -1,0 +1,17 @@
+.winners-cover {
+  display: flex;
+  justify-content: center;
+  background: url('../../../../../assets/winners-bg.png') white no-repeat center/cover;
+  height: 600px;
+  padding-top: 150px;
+}
+
+.winners-cover-title {
+  color: white;
+  font-family: 'Roboto Medium', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+}

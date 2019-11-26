@@ -1,0 +1,42 @@
+<div class="profile-controls-container">
+  <div class="profile-general-info">
+    <div class="user-avatar">
+      <img
+        class="user-avatar-image"
+        [src]="user?.avatar || ''"
+        alt="user avatar"
+      >
+    </div>
+    <div class="user-data">
+      <span class="user-fullname">{{ user?.full_name }}</span>
+      <span>{{ user?.country }}</span>
+    </div>
+    <div class="user-stats">
+      <span class="user-stats-points">{{ user?.rank.points }}</span>
+      <div>
+        <div class="user-stats-stars">
+          <i class="far fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <span class="user-stats-text">{{ 'points' | uppercase }}</span>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="user">
+    <div class="profile-tabs text-center">
+      <ng-container *ngFor="let item of tabsList">
+        <div
+          class="profile-tab"
+          [routerLink]="['/users', user._id]"
+          [queryParams]="{ tab: item.tab }"
+          [ngClass]="{ 'profile-tab-active': (activeTab | async) === item.tab }"
+        >
+          <span class="profile-tab-count">{{ user[item.prop]?.length }}</span>
+          <span class="profile-tab-title">{{ item.text | uppercase }}</span>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>

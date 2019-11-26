@@ -1,0 +1,19 @@
+.login-form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.submit-btn {
+  margin-top: 30px;
+}
+
+.login-card .mat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.login-card .mat-card-header .mat-card-title {
+  margin: 0;
+}

@@ -1,0 +1,101 @@
+.profile-controls-container {
+  display: flex;
+  align-items: center;
+  font-family: Roboto, sans-serif;
+  height: 100%;
+}
+
+.profile-general-info {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.user-avatar {
+  position: relative;
+  width: 138px;
+  margin-right: 20px;
+}
+
+.user-avatar-image {
+  position: absolute;
+  top: -70px;
+  border-radius: 50%;
+  width: 100%;
+}
+
+.user-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 215px;
+  width: 100%;
+}
+
+.user-data span:first-child {
+  margin-bottom: 5px;
+}
+
+.user-fullname {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.user-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-stats .fa-star {
+  color: pink;
+  margin-left: -7px;
+}
+
+.user-stats span:first-child {
+  margin-bottom: 5px;
+}
+
+.user-stats-stars, .user-stats-text {
+  display: inline-block;
+
+}
+
+.user-stats-stars {
+  margin: 0 7px;
+}
+
+.user-stats-points {
+  font-size: 24px;
+}
+
+.user-stats-text {
+  color: #585858;
+}
+
+.profile-tabs {
+  display: flex;
+}
+
+.profile-tab {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 12px 15px;
+}
+
+.profile-tab-count {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.profile-tab-title {
+  font-size: 13px;
+}
+
+.profile-tab-active {
+  color: #7303c0;
+  background-color: #f2f2f2
+}
+

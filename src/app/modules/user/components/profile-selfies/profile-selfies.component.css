@@ -1,0 +1,35 @@
+.upload-photos {
+  padding: 15px;
+  width: 33.33333%;
+}
+
+.upload-photos-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('../../../../../assets/upload-photos.png') white no-repeat center 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  transition: .2s ease-out;
+}
+
+.upload-photos-input:hover {
+  transform: scale(1.05) translateY(-5%);
+  box-shadow: 0 7px 20px 2px rgba(0,0,0,.25);
+}
+
+.upload-photos-input-text {
+  color: lightgrey;
+  font-family: "Comic Sans MS", sans-serif;
+  font-size: 40px;
+  font-style: italic;
+  margin-top: 110px;
+}
+
+app-picture-preview {
+  cursor: pointer;
+  width: 33.33333%;
+}

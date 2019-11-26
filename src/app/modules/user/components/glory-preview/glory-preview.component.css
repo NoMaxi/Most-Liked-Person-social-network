@@ -1,0 +1,44 @@
+.glory-preview {
+  background-color: #d7d7d7;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.glory-preview-photo {
+  height: 100%;
+  max-width: unset;
+  object-fit: cover;
+  opacity: 1;
+  transition: opacity 0.5s ease-in 0s;
+}
+
+.glory-preview-without-photo {
+  cursor: default;
+  height: 100%;
+  width: 200px;
+}
+
+.glory-preview-foreground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,.4);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.glory-preview-foreground-without-photo {
+  background-color: unset;
+}
+
+.glory-preview-foreground-img {
+  border-radius: 5px;
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}

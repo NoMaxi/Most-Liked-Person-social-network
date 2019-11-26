@@ -1,0 +1,12 @@
+.challenges-list-bg {
+  background-color: lightyellow;
+  padding: 30px;
+  width: 100%;
+}
+
+.challenges-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 1200px;
+}

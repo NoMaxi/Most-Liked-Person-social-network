@@ -1,0 +1,114 @@
+.user-card {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.user-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 20px;
+}
+
+.user-card-bg {
+  border-radius: 5px;
+  height: 92px;
+  width: 100%;
+  margin-bottom: -70px;
+}
+
+.user-card-avatar {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.user-card-avatar-img {
+  border-radius: 50%;
+  height: 120px;
+  width: 120px;
+}
+
+.user-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-card-title {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.user-card-subtitle {
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.user-card-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #212121;
+  background: #303030;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 500px;
+  z-index: 0;
+  overflow: hidden;
+  transition: .4s ease-out;
+  width: 155px;
+  height: 44px;
+}
+
+.user-card-button-gradient {
+  background: linear-gradient(to right, #7303c0 0, #ec38bc 76%, #fa66cb 100%);
+}
+
+.user-card-button-gradient .user-card-button-text {
+  background: linear-gradient(to right, #7303c0 0, #ec38bc 76%, #fa66cb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.user-card-button:hover {
+  box-shadow: inset 0 0 30px 0 #c1c1c1;
+  opacity: .95;
+}
+
+.user-card-button:before {
+  background-color: #f2f2f2;
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 500px;
+  z-index: -1;
+  opacity: 1;
+  transition: .4s ease-out;
+}
+
+.user-card-button:after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 24px);
+  height: 48%;
+  top: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to top,rgba(255,255,255,.05) 0,rgba(255,255,255,.7) 100%);
+  border-radius: 500px;
+  opacity: 0;
+}
+
+.user-card-button-text {
+  display: block;
+}

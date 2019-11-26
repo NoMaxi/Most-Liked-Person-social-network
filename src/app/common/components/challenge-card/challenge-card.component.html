@@ -1,0 +1,33 @@
+<mat-card
+  class="challenge-card"
+  [ngStyle]="{ background: 'url(' + challenge?.background || '' + ')' + 'center/cover no-repeat' }"
+>
+  <mat-card-header>
+    <mat-card-title class="challenge-card-title">
+      {{ challenge?.challenge_name }}
+    </mat-card-title>
+    <mat-card-subtitle
+      class="challenge-card-subtitle"
+      [ngClass]="{
+        'challenge-card-subtitle-active': challenge.is_active,
+        'challenge-card-subtitle-closed': challenge.is_closed
+      }">
+      {{ challenge?.is_active ? 'Active' : 'Closed' }}
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content class="challenge-card-content">
+    <img
+      *ngIf="challenge.last_picture"
+      class="challenge-card-img"
+      mat-card-image
+      [src]="challenge.last_picture"
+      alt="last picture"
+    >
+    <p>Start date: {{ challenge?.start_date | date: 'dd.MM.yyyy, HH:mm' }}</p>
+    <p>End date: {{ challenge?.end_date | date: 'dd.MM.yyyy, HH:mm' }}</p>
+    <p>Awards: {{ challenge?.awards }}</p>
+    <p>Votes: {{ challenge?.votes }}</p>
+  </mat-card-content>
+</mat-card>
+

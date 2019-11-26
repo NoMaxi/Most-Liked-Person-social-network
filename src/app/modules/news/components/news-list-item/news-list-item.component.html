@@ -1,0 +1,101 @@
+<mat-card class="news-item-card w-100">
+  <mat-card-header class="news-item-info w-100">
+    <div class="news-item-user-info">
+      <div class="user-avatar" mat-card-avatar>
+        <img
+          class="user-avatar-image"
+          [src]="newsItem?.owner.avatar"
+          alt="user avatar"
+        >
+      </div>
+      <div class="author-info text-center">
+        <span class="author-name">
+          {{ newsItem?.owner.full_name }}
+        </span>
+        <span class="author-country">
+          {{ newsItem?.owner.country }}
+        </span>
+      </div>
+    </div>
+    <div class="news-item-upload-info text-center">
+      <span class="upload-count">Uploaded {{ newsItem?.pictures.length }}
+        photos</span>
+      <span class="upload-date">{{ newsItem?.date | date: 'dd.MM.yyyy, HH:mm' }}</span>
+    </div>
+    <mat-card-actions class="news-item-actions">
+      <ng-container *ngIf="!isCurrentUser">
+        <button
+          mat-button
+          class="news-item-button"
+          [ngClass]="{ 'news-item-button-gradient': !isFollowed }"
+          (click)="onFollowBtnClick()"
+        >
+          <span class="news-item-button-text">
+            {{ isFollowed ? 'following' : 'follow' }}
+          </span>
+        </button>
+      </ng-container>
+    </mat-card-actions>
+  </mat-card-header>
+
+  <mat-card-content class="news-item-content">
+    <ng-container [ngSwitch]="newsItem.pictures.length">
+      <ng-container *ngSwitchCase="1">
+        <div class="news-item-image-container">
+          <img
+            [appImgLoader]="newsItem?.pictures[0].url"
+            class="news-item-image"
+            alt="news image"
+          >
+        </div>
+      </ng-container>
+
+      <ng-container *ngSwitchCase="2">
+        <div class="news-item-image-container">
+          <div class="image-container-inner-2">
+            <img
+              [appImgLoader]="newsItem?.pictures[0].url"
+              class="news-item-image"
+              alt="news image"
+            >
+          </div>
+          <div class="image-container-inner-2">
+            <img
+              [appImgLoader]="newsItem?.pictures[1].url"
+              class="news-item-image"
+              alt="news image"
+            >
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngSwitchDefault>
+        <div class="news-item-image-container">
+          <div class="image-container-inner-3-1">
+            <img
+              [appImgLoader]="newsItem?.pictures[0].url"
+              class="news-item-image"
+              alt="news image"
+            >
+          </div>
+          <div class="image-container-3">
+            <div class="image-container-inner-3-2">
+              <img
+                [appImgLoader]="newsItem?.pictures[1].url"
+                class="news-item-image"
+                alt="news image"
+              >
+            </div>
+            <div class="image-container-inner-3-2">
+              <img
+                [appImgLoader]="newsItem?.pictures[2].url"
+                class="news-item-image"
+                alt="news image"
+              >
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

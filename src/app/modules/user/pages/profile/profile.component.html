@@ -1,0 +1,10 @@
+<app-profile-cover
+  [cover]="user?.cover || ''"
+  [isCurrentUser]="authUserId === id"
+  (upload)="uploadCover($event)"
+></app-profile-cover>
+
+<div class="profile-info-container mx-auto">
+  <app-profile-controls [user]="user"></app-profile-controls>
+  <app-profile-tabs-container [user]="user"></app-profile-tabs-container>
+</div>

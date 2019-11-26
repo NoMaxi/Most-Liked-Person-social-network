@@ -1,0 +1,6 @@
+<ng-container *ngIf="!notifications?.length">
+  <p class="toolbar-notifications-empty">Notifications list is empty</p>
+</ng-container>
+<ng-container *ngFor="let item of notifications">
+  <app-notification-item [notification]="item"></app-notification-item>
+</ng-container>

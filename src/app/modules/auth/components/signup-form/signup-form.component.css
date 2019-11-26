@@ -1,0 +1,17 @@
+input, label {
+  color: mediumblue;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+.gender-radio-button {
+  color: forestgreen;
+  font-family: Georgia, sans-serif;
+  font-weight: 600;
+  margin-left: 5rem;
+  margin-bottom: 0.75rem;
+}
+
+.gender-radio-button[ng-reflect-value="female"] {
+  color: deeppink;
+}
