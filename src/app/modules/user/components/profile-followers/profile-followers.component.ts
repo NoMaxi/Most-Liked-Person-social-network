@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
 import { GlobalAuthService } from '../../../../common/services/global-auth.service';
@@ -12,6 +12,7 @@ import { UserFollower } from '../../interfaces/UserFollower';
   styleUrls: ['./profile-followers.component.css']
 })
 export class ProfileFollowersComponent implements OnInit {
+  @Input() tabType: string;
   users: UserFollower[];
 
   constructor(
@@ -26,7 +27,8 @@ export class ProfileFollowersComponent implements OnInit {
 
   getFollowers() {
     const userId = this.globalAuthService.userId;
-    this.userService.getUserFollowers(userId).subscribe((data: UserFollowers) => {
+    const followerType = this.tabType === 'followers' ? 'followings' : 'followers';
+    this.userService.getUserFollowers(userId, followerType).subscribe((data: UserFollowers) => {
       if (data.users) {
         this.users = data.users;
       }

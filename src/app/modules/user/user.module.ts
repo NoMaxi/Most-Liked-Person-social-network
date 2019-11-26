@@ -14,7 +14,6 @@ import { ProfileGloriesComponent } from './components/profile-glories/profile-gl
 import { GloryPreviewComponent } from './components/glory-preview/glory-preview.component';
 import { ProfileFavouritesComponent } from './components/profile-favourites/profile-favourites.component';
 import { ProfileFollowersComponent } from './components/profile-followers/profile-followers.component';
-import { ProfileFollowingsComponent } from './components/profile-followings/profile-followings.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 
 @NgModule({
@@ -30,7 +29,6 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     GloryPreviewComponent,
     ProfileFavouritesComponent,
     ProfileFollowersComponent,
-    ProfileFollowingsComponent,
     UserCardComponent
   ],
   imports: [

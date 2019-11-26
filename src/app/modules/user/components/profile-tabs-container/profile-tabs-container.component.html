@@ -9,9 +9,9 @@
     <app-profile-favourites></app-profile-favourites>
   </ng-container>
   <ng-container *ngSwitchCase="'followers'">
-    <app-profile-followers></app-profile-followers>
+    <app-profile-followers [tabType]="'followers'"></app-profile-followers>
   </ng-container>
   <ng-container *ngSwitchCase="'followings'">
-    <app-profile-followings></app-profile-followings>
+    <app-profile-followers [tabType]="'followings'"></app-profile-followers>
   </ng-container>
 </ng-container>
