@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lesson7": {
+    "social-network": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/lesson7",
+            "outputPath": "dist/social-network",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "lesson7:build"
+            "browserTarget": "social-network:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "lesson7:build:production"
+              "browserTarget": "social-network:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "lesson7:build"
+            "browserTarget": "social-network:build"
           }
         },
         "test": {
@@ -103,7 +103,7 @@
         }
       }
     },
-    "lesson7-e2e": {
+    "social-network-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "lesson7:serve"
+            "devServerTarget": "social-network:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "lesson7:serve:production"
+              "devServerTarget": "social-network:serve:production"
             }
           }
         },
@@ -132,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "lesson7"
+  "defaultProject": "social-network"
 }
