@@ -1,6 +1,8 @@
-# Lesson7
+# Most Liked Person social network
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+
+App deployed on Heroku - https://mostlikedperson-social-network.herokuapp.com
 
 ## Development server
 
