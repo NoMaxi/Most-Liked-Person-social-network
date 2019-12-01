@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
 import { GlobalAuthService } from '../../../../common/services/global-auth.service';
@@ -12,7 +12,7 @@ import { UserGlories } from '../../interfaces/UserGlories';
   styleUrls: ['./profile-glories.component.css']
 })
 export class ProfileGloriesComponent implements OnInit {
-  achievements: UserAchievement[];
+  @Output() achievements: UserAchievement[];
 
   constructor(
     private globalAuthService: GlobalAuthService,

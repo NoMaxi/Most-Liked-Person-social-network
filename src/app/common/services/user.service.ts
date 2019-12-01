@@ -82,14 +82,6 @@ export class UserService {
     return this.http.get<UserFollowers>(`${this.apiUrl}/public/users/my-followers-followings/${id}`, { params });
   }
 
-  // getUserFollowings(id: string): Observable<UserFollowers> {
-  //   const params = new HttpParams()
-  //     .set('page', '1')
-  //     .set('count', '30')
-  //     .set('path', 'followers');
-  //   return this.http.get<UserFollowers>(`${this.apiUrl}/public/users/my-followers-followings/${id}`, { params });
-  // }
-
   userFollowToggle(id: string): Observable<UserFollowServerAnswer> {
     return this.http.put<UserFollowServerAnswer>(`${this.apiUrl}/public/users/following/${id}`, {});
   }

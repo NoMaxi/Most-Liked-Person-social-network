@@ -3,3 +3,7 @@ app-user-card {
   flex: 0 0 33.33333%;
   height: 100%;
 }
+
+app-empty-list {
+  margin: auto;
+}

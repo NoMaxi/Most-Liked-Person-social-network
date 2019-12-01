@@ -17,3 +17,8 @@
 <ng-container *ngFor="let image of images">
   <app-picture-preview [img]="image"></app-picture-preview>
 </ng-container>
+
+<app-empty-list
+  *ngIf="!images?.length"
+  [text]="'It\'s so empty here…'"
+></app-empty-list>

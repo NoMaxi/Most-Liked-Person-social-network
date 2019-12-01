@@ -1,3 +1,8 @@
 <ng-container *ngFor="let favouriteImage of favourites">
   <app-picture-preview [img]="favouriteImage"></app-picture-preview>
 </ng-container>
+
+<app-empty-list
+  *ngIf="!favourites?.length"
+  [text]="'It\'s so empty here…'"
+></app-empty-list>
