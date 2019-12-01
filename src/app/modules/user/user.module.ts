@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule, MatButtonModule } from '@angular/material';
 
 import { UserRoutingModule } from './user-routing.module';
+import { SharedModule } from '../shared/shared.module';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { ProfileCoverComponent } from './components/profile-cover/profile-cover.component';
@@ -36,6 +37,7 @@ import { UserCardComponent } from './components/user-card/user-card.component';
     UserRoutingModule,
     MatCardModule,
     MatButtonModule,
+    SharedModule
   ]
 })
 export class UserModule { }

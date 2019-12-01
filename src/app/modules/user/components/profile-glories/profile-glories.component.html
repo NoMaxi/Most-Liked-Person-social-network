@@ -1,3 +1,8 @@
 <ng-container *ngFor="let achievement of achievements">
   <app-glory-preview [achievement]="achievement"></app-glory-preview>
 </ng-container>
+
+<app-empty-list
+  *ngIf="!achievements?.length"
+  [text]="'It\'s so empty here…'"
+></app-empty-list>
