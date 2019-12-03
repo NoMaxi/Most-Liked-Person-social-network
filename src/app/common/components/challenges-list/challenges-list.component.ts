@@ -12,7 +12,5 @@ export class ChallengesListComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.challenges);
-  }
+  ngOnInit() {}
 }

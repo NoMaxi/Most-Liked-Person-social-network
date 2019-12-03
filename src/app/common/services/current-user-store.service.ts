@@ -33,6 +33,7 @@ export class CurrentUserStoreService {
     const id = this.globalAuth.userId;
     this.http.get<User>(`${this.apiUrl}/public/users/get-info/${id}`)
       .subscribe((user: User) => {
+        console.log(user);
         if (user._id) {
           this.info = user;
         }
