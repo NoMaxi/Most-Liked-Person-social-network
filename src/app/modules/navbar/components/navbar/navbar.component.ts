@@ -4,6 +4,7 @@ import { ActivatedRoute, ActivationEnd, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 
 import { NavbarService } from '../../services/navbar.service';
+import { AuthService } from '../../../auth/services/auth.service';
 import { CurrentUserStoreService } from '../../../../common/services/current-user-store.service';
 import { Notification } from '../../interfaces/Notification';
 
@@ -23,6 +24,7 @@ export class NavbarComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private navbarService: NavbarService,
+    private authService: AuthService,
     private messageService: MessageService,
     private currentUserStoreService: CurrentUserStoreService
   ) {}
@@ -32,18 +34,17 @@ export class NavbarComponent implements OnInit {
 
     this.router.events.pipe(
       filter((event) => event instanceof ActivationEnd)
-    ).subscribe((event) => {
-        this.activatedRoute.firstChild.data.subscribe((value) => {
-          this.isHidden = !!value.withoutHeader;
-        });
+    ).subscribe(() => {
+      this.activatedRoute.firstChild.data.subscribe((value) => {
+        this.isHidden = !!value.withoutHeader;
       });
-    
+    });
+
     this.navbarService.getNotifications().subscribe((data: Notification[]) => {
       this.notifications = data;
       this.unreadNotifications = data.filter((item) => !item.readed);
     }, (err) => {
       console.error(err);
-
       this.messageService.add({
         severity: 'error',
         summary: 'Notifications load error',
@@ -57,5 +58,9 @@ export class NavbarComponent implements OnInit {
         this.userId = _id;
       }
     });
+  }
+
+  profileSignout() {
+    this.authService.signout();
   }
 }

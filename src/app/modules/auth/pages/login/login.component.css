@@ -1,19 +1,33 @@
 .login-form-container {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   margin: 20px auto;
+}
+
+.btn-home.mat-button {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.mat-button {
+  font-size: 16px;
+}
+
+.fas.fa-chevron-circle-left {
+  margin-right: 2px;
 }
 
 .submit-btn {
   margin-top: 30px;
 }
 
-.login-card .mat-card-header {
+.mat-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-.login-card .mat-card-header .mat-card-title {
+.mat-card-header .mat-card-title {
   margin: 0;
 }

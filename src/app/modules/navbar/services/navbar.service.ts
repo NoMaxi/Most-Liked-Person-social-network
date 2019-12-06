@@ -21,7 +21,6 @@ export class NavbarService {
     const headers = new HttpHeaders({
       'x-access-token': this.globalAuthService.token
     });
-    return this.http.get<Notification[]>(`${ this.apiUrl }/public/users/notification`,
-      { headers });
+    return this.http.get<Notification[]>(`${ this.apiUrl }/public/users/notification`, { headers });
   }
 }

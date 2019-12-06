@@ -46,7 +46,10 @@ import { ResetPasswordModalComponent } from './components/reset-password-modal/r
   ],
   providers: [
     AuthService,
-    { provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher }
+    {
+      provide: ErrorStateMatcher,
+      useClass: ShowOnDirtyErrorStateMatcher
+    }
   ]
 })
 export class AuthModule {}

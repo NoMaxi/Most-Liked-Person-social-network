@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotificationsListComponent } from './components/notifications-list/notifications-list.component';
 import { NotificationItemComponent } from './components/notification-item/notification-item.component';
 import { NavbarService } from './services/navbar.service';
+import { AuthService } from '../auth/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,9 @@ import { NavbarService } from './services/navbar.service';
   exports: [
     NavbarComponent
   ],
-  providers: [NavbarService]
+  providers: [
+    NavbarService,
+    AuthService
+  ]
 })
 export class NavbarModule { }

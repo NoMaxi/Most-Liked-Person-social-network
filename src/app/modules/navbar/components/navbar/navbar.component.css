@@ -1,22 +1,88 @@
+.mat-toolbar-single-row {
+  height: unset;
+}
+
 .toolbar {
-  display: flex;
-  justify-content: center;
   background-color: #212121;
   color: #fff;
-  height: 81px;
+  font-family: Robotoregular, sans-serif;
+  font-size: 16px;
   padding: 19px 0;
+  text-transform: uppercase;
 }
 
 .toolbar-inner {
   display: flex;
-  justify-content: space-between;
-  width: 1200px;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1170px;
+  width: 100%;
 }
 
-.toolbar-inner a {
-  text-transform: uppercase;
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
+.logo {
+  margin-right: 40px;
+  max-width: 100%;
+}
+
+.toolbar-nav {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.toolbar-nav li {
+  margin-left: 40px;
+}
+
+.nav-active-link {
+  color: #e12ebc!important;
+}
+
+.toolbar-nav li:hover{
+  color: #ccc;
+}
+
+.toolbar-nav li a {
+  color: inherit;
+  transition: 0.2s ease-out;
+}
+
+.profile-controls {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.profile-controls-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.profile-controls-list li {
+  margin-left: 40px;
+}
+
+.profile-controls-list li:hover{
+  color: #ccc;
+}
+
+.profile-controls-list li a {
+  color: inherit;
+  transition: 0.2s ease-out;
+}
+
+.user-avatar {
+  display: block;
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+}
+
+.user-signout {
+  text-transform: none;
 }
 
 .toolbar-notifications-list {
@@ -27,4 +93,8 @@
 
 .fas.fa-bell {
   cursor: pointer;
+}
+
+.fas.fa-user {
+  margin-right: 12px;
 }

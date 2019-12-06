@@ -1,54 +1,93 @@
 <mat-toolbar *ngIf="!isHidden" class="toolbar">
   <div class="toolbar-inner">
-    <a
-      href=""
-      class="logo"
-      [routerLink]="['/']"
-    >
-      Home
+    <a href="" [routerLink]="['/']">
+      <img class="logo" src="../../../../../assets/logo.png" alt="logo">
     </a>
-    <a
-      href=""
-      [routerLink]="['/winners']"
-    >
-      Winners
-    </a>
-    <a
-      *ngIf="userId"
-      href=""
-      [routerLink]="['/news']"
-    >
-      News Feed
-    </a>
-    <a
-      *ngIf="!userId"
-      href=""
-      [routerLink]="['/auth/login']"
-    >
-      Login
-    </a>
-    <a
-      *ngIf="userId"
-      href=""
-      [routerLink]="['/users/', userId]"
-    >
-      User profile
-    </a>
-    <div class="notifications-menu">
-      <i
-        class="fa-icon fas fa-bell"
-        matBadge="{{ unreadNotifications?.length }}"
-        matBadgeColor="warn"
-        [matBadgeHidden]="!unreadNotifications?.length"
-        (click)="op.toggle($event)"
-      ></i>
+    <ul class="toolbar-nav">
+      <li>
+        <a
+          href=""
+          [routerLink]="['/']"
+          routerLinkActive="nav-active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href=""
+          [routerLink]="['/winners']"
+          routerLinkActive="nav-active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          Winners
+        </a>
+      </li>
+      <li *ngIf="userId">
+        <a
+          href=""
+          [routerLink]="['/news']"
+          routerLinkActive="nav-active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          News feed
+        </a>
+      </li>
+    </ul>
+    <div class="profile-controls">
+      <div
+        *ngIf="userId"
+        class="notifications-menu"
+      >
+        <i
+          class="fas fa-bell"
+          matBadge="{{ unreadNotifications?.length }}"
+          matBadgeColor="warn"
+          [matBadgeHidden]="!unreadNotifications?.length"
+          (click)="op.toggle($event)"
+        ></i>
+      </div>
+      <ul class="profile-controls-list">
+        <li *ngIf="!userId">
+          <a
+            href=""
+            [routerLink]="['/auth/login']"
+          >
+            <i class="fas fa-user"></i>
+              Login
+          </a>
+        </li>
+        <li *ngIf="userId">
+          <a
+            href=""
+            [routerLink]="['/users/', userId]"
+          >
+            <img
+              class="user-avatar"
+              [src]="userAvatar"
+              alt="user avatar"
+            >
+          </a>
+        </li>
+        <li *ngIf="userId">
+
+          <a
+            class="user-signout"
+            href=""
+            (click)="profileSignout()"
+          >
+            Sign out
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
-
-  <p-overlayPanel #op [dismissable]="true">
-    <app-notifications-list
-      class="toolbar-notifications-list"
-      [notifications]="notifications"
-    ></app-notifications-list>
-  </p-overlayPanel>
 </mat-toolbar>
+
+<p-overlayPanel #op [dismissable]="true">
+  <app-notifications-list
+    class="toolbar-notifications-list"
+    [notifications]="notifications"
+  ></app-notifications-list>
+</p-overlayPanel>

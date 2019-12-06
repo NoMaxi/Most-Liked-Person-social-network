@@ -53,6 +53,7 @@
 
 .home-inner-bottom-details span {
   font-size: 18px;
+  text-transform: capitalize;
 }
 
 .home-inner-bottom-details span:after {
