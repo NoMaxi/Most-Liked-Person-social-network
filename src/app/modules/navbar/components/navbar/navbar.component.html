@@ -41,7 +41,7 @@
         class="notifications-menu"
       >
         <i
-          class="fa-icon fas fa-bell"
+          class="fas fa-bell"
           matBadge="{{ unreadNotifications?.length }}"
           matBadgeColor="warn"
           [matBadgeHidden]="!unreadNotifications?.length"
@@ -54,7 +54,8 @@
             href=""
             [routerLink]="['/auth/login']"
           >
-            Login
+            <i class="fas fa-user"></i>
+              Login
           </a>
         </li>
         <li *ngIf="userId">
@@ -70,7 +71,9 @@
           </a>
         </li>
         <li *ngIf="userId">
+
           <a
+            class="user-signout"
             href=""
             (click)="profileSignout()"
           >

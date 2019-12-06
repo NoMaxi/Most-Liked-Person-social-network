@@ -75,9 +75,14 @@
 }
 
 .user-avatar {
+  display: block;
   border-radius: 50%;
   height: 48px;
   width: 48px;
+}
+
+.user-signout {
+  text-transform: none;
 }
 
 .toolbar-notifications-list {
@@ -88,4 +93,8 @@
 
 .fas.fa-bell {
   cursor: pointer;
+}
+
+.fas.fa-user {
+  margin-right: 12px;
 }

@@ -34,7 +34,7 @@ export class NavbarComponent implements OnInit {
 
     this.router.events.pipe(
       filter((event) => event instanceof ActivationEnd)
-    ).subscribe((event) => {
+    ).subscribe(() => {
       this.activatedRoute.firstChild.data.subscribe((value) => {
         this.isHidden = !!value.withoutHeader;
       });

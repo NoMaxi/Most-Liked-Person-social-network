@@ -46,7 +46,6 @@ export class LoginFormComponent implements OnInit {
       if (!res.error) {
         this.currentUser.initCurrentUser();
         this.router.navigate(['/']);
-
         this.messageService.add({
           severity: 'success',
           summary: 'Login success',
@@ -56,7 +55,6 @@ export class LoginFormComponent implements OnInit {
     }, (err) => {
       console.error(err);
       this.loginForm.patchValue({ password: '' });
-
       this.messageService.add({
         severity: 'error',
         summary: 'Login fail',
