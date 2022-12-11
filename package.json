@@ -24,7 +24,7 @@
     "@angular/router": "~7.2.5",
     "@auth0/angular-jwt": "^2.1.0",
     "core-js": "^2.6.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "primeicons": "^1.0.0",
     "primeng": "^7.1.0",
     "rxjs": "~6.3.3",
